@@ -1,5 +1,6 @@
 
 import React from "react";
+import photo from "./IMG_20230208_171645530.jpg";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -139,9 +140,11 @@ function Hero() {
           </div>
           <div className="md:col-span-1">
             <div className="relative mx-auto w-48 h-48 md:w-56 md:h-56 rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
-              <div className="w-full h-full rounded-3xl bg-white dark:bg-black grid place-items-center">
-                <span className="text-5xl font-black bg-clip-text text-transparent bg-gradient-to-br from-indigo-500 to-pink-500">NP</span>
-              </div>
+              <img
+                src={photo}
+                alt="Natalia Abigail Pérez Romero"
+                className="w-full h-full rounded-3xl object-cover"
+              />
             </div>
           </div>
         </div>
