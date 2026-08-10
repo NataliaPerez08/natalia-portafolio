@@ -1,6 +1,5 @@
-
 import React from "react";
-import photo from "./IMG_20230208_171645530.jpg";
+import nat from "./nat.png";
 
 const NAV = [
   { id: "about", label: "About" },
@@ -84,213 +83,308 @@ const certs = [
   { issuer: "Microsoft", name: "Azure Fundamentals: Cloud Concepts", date: "10/17/2024" },
 ];
 
-function Section({ id, title, children }) {
-  return (
-    <section id={id} className="scroll-mt-24 py-16">
-      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">{title}</h2>
-      {children}
-    </section>
-  );
-}
-function Badge({ children }) {
-  return <span className="inline-block rounded-full border px-3 py-1 text-sm leading-6">{children}</span>;
-}
-function Card({ children }) {
-  return <div className="rounded-2xl border bg-white/5 dark:bg-black/20 backdrop-blur p-5 shadow-sm hover:shadow transition-shadow">{children}</div>;
+const ICONS = {
+  user: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 4-6 8-6s8 2 8 6" /></svg>
+  ),
+  code: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5M11 4l2 16" /></svg>
+  ),
+  chip: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><rect x="6" y="6" width="12" height="12" rx="1" /><path d="M9 6V3M15 6V3M9 18v3M15 18v3M6 9H3M6 15H3M18 9h3M18 15h3" /></svg>
+  ),
+  briefcase: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><rect x="3" y="6" width="18" height="13" rx="1" /><path d="M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2M12 11v4" /></svg>
+  ),
+  folder: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M4 5h6l2 3h8a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" /></svg>
+  ),
+  graduation: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><path d="M12 4l10 5-10 5L2 9l10-5z" /><path d="M6 11v4l6 3 6-3v-4" /><path d="M19 13v4" /></svg>
+  ),
+  award: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><circle cx="12" cy="9" r="6" /><path d="M9 15l-1 7 4-3 4 3-1-7" /></svg>
+  ),
+  mail: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><rect x="3" y="5" width="18" height="14" rx="1" /><path d="M3 6l9 6 9-6" /></svg>
+  ),
+};
+
+function Icon({ name }) {
+  return ICONS[name] || null;
 }
 
-function Header() {
+function Window({ title, children, className = "", variant = "default", icon }) {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur border-b bg-white/60 dark:bg-black/40">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="#about" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 grid place-items-center text-white font-bold">NP</div>
-          <div>
-            <h1 className="text-lg font-semibold">Natalia Abigail Pérez Romero</h1>
-            <p className="text-xs text-neutral-600 dark:text-neutral-300">Computer Scientist</p>
-          </div>
-        </a>
-        <nav className="hidden md:flex gap-3">
-          {NAV.map((n) => (
-            <a key={n.id} href={`#${n.id}`} className="text-sm px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10">{n.label}</a>
-          ))}
-        </nav>
+    <div className={`retro-window ${className}`}>
+      <div className={`retro-title-bar ${variant === "inverse" ? "inverse" : ""} ${variant === "plain" ? "plain" : ""}`}>
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-3 h-3 border-2 border-current shrink-0" aria-hidden="true" />
+          {icon && <span className="shrink-0">{icon}</span>}
+          <span className="font-bold tracking-widest uppercase text-sm md:text-base truncate">{title}</span>
+        </div>
+        <div className="w-3 h-3 border-2 border-current shrink-0" aria-hidden="true" />
+      </div>
+      <div className="p-4 md:p-5">{children}</div>
+    </div>
+  );
+}
+
+function SystemMenu({ time }) {
+  return (
+    <header className="sticky top-0 z-50 border-b-2 border-crt-fg bg-crt-bg">
+      <div className="max-w-7xl mx-auto px-4 py-1 flex items-center justify-between text-base md:text-lg">
+        <div className="flex items-center gap-1 overflow-hidden">
+          <span className="font-bold tracking-wider px-2 shrink-0" aria-hidden="true">&gt;_</span>
+          <nav className="hidden md:flex gap-1 overflow-x-auto">
+            {NAV.map((n) => (
+              <a key={n.id} href={`#${n.id}`} className="px-2 hover:bg-crt-fg hover:text-crt-bg whitespace-nowrap">
+                {n.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div className="flex items-center gap-4 shrink-0">
+          <span className="hidden lg:inline text-dim">640K OK</span>
+          <span className="hidden sm:inline">{time}</span>
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 bg-crt-fg animate-pulse" aria-hidden="true" />
+            ONLINE
+          </span>
+        </div>
       </div>
     </header>
   );
 }
 
-function Hero() {
+function Banner() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-100 via-transparent to-transparent dark:from-purple-900/20" />
-      <div className="max-w-6xl mx-auto px-4 pt-16 pb-8">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          <div className="md:col-span-2">
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">Building scalable, secure, and elegant systems</h2>
-            <p className="mt-4 text-neutral-700 dark:text-neutral-200 max-w-2xl">
-              I’m a computer scientist with experience in software engineering, cloud, networking & security, and data/AI—focused on delivering reliable and impactful solutions.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {socialLinks.map((s) => (
-                <a key={s.label} href={s.href} className="rounded-xl border px-4 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10" target="_blank" rel="noreferrer">{s.label}</a>
-              ))}
-              <a href="/cv_Natalia_Perez.pdf" className="rounded-xl border px-4 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10">Download CV (PDF)</a>
-            </div>
+    <div className="max-w-7xl mx-auto px-4 pt-3">
+      <div className="retro-window p-3 text-center overflow-x-auto">
+        <pre className="text-[10px] sm:text-xs md:text-sm leading-none whitespace-pre font-mono text-crt-fg">
+{`╔══════════════════════════════════════════════════════════════════╗
+║  PERSONAL TERMINAL v1.0.3 — PROFILE VIEWER                       ║
+║  COPYRIGHT (C) 1983 NATALIA PÉREZ · ALL RIGHTS RESERVED          ║
+╚══════════════════════════════════════════════════════════════════╝`}
+        </pre>
+      </div>
+    </div>
+  );
+}
+
+function MobileNav() {
+  return (
+    <div className="md:hidden max-w-7xl mx-auto px-4 pt-3">
+      <Window title="SECTIONS" variant="plain">
+        <div className="flex flex-wrap gap-2">
+          {NAV.map((n) => (
+            <a key={n.id} href={`#${n.id}`} className="retro-btn text-sm">{n.label}</a>
+          ))}
+        </div>
+      </Window>
+    </div>
+  );
+}
+
+function ProfileWindow() {
+  return (
+    <Window title="USER_PROFILE.EXE" variant="inverse" className="mt-3 md:mt-6">
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="md:col-span-2 space-y-4">
+          <h2 className="text-4xl md:text-6xl font-bold leading-none uppercase tracking-tight">
+            Natalia Abigail<br />Pérez Romero
+          </h2>
+          <p className="text-dim text-lg">Computer Scientist // Cloud & Network Security Specialist</p>
+          <hr className="retro-rule" />
+          <p className="text-lg max-w-2xl">
+            Building scalable, secure, and elegant systems. I’m a computer scientist with experience in software engineering, cloud, networking & security, and data/AI—focused on delivering reliable and impactful solutions.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            {socialLinks.map((s) => (
+              <a key={s.label} href={s.href} className="retro-btn" target="_blank" rel="noreferrer">{s.label}</a>
+            ))}
+            <a href="/cv_Natalia_Perez.pdf" className="retro-btn">Download CV (PDF)</a>
           </div>
-          <div className="md:col-span-1">
-            <div className="relative mx-auto w-48 h-48 md:w-56 md:h-56 rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1">
+        </div>
+        <div className="md:col-span-1">
+          <div className="retro-window p-1">
+            <div className="relative">
               <img
-                src={photo}
+                src={nat}
                 alt="Natalia Abigail Pérez Romero"
-                className="w-full h-full rounded-3xl object-cover"
+                className="w-full aspect-square object-cover bitmap-portrait"
               />
+              <div className="absolute bottom-0 left-0 right-0 border-t-2 border-crt-fg bg-crt-bg px-2 py-1 text-xs">PHOTO_001.BMP</div>
+            </div>
+            <div className="mt-2 text-xs text-dim flex justify-between">
+              <span>128×128 px</span>
+              <span>1-BIT DITHERED</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </Window>
   );
 }
 
-function About() {
+function AboutWindow() {
   return (
-    <Section id="about" title="About">
-      <p className="text-neutral-700 dark:text-neutral-200 leading-relaxed max-w-3xl">
+    <Window title="ABOUT.TXT" icon={<Icon name="user" />}>
+      <p className="text-lg leading-relaxed max-w-3xl">
         Highly skilled and driven computer scientist with expertise in software development, algorithm design, cloud computing, and operating systems.
         Passionate about innovation and applying strong CS fundamentals across network security, distributed systems, data science, and AI to design scalable, efficient, and secure systems.
       </p>
-    </Section>
+    </Window>
   );
 }
 
-function Skills() {
+function SkillsWindow() {
   return (
-    <Section id="skills" title="Skills">
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card>
-          <h3 className="text-lg font-semibold mb-3">Technical</h3>
-          <div className="flex flex-wrap gap-2">
-            {skills.technical.map((group) => (
-              <div key={group.title} className="w-full">
-                <p className="text-sm font-medium mt-3 mb-2 opacity-80">{group.title}</p>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (<Badge key={item}>{item}</Badge>))}
-                </div>
+    <div className="grid md:grid-cols-2 gap-6">
+      <Window title="TECHNICAL.DAT" icon={<Icon name="code" />}>
+        <div className="space-y-4">
+          {skills.technical.map((group) => (
+            <div key={group.title}>
+              <p className="text-dim text-sm mb-2 uppercase tracking-wider">[{group.title}]</p>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span key={item} className="retro-tag">{item}</span>
+                ))}
               </div>
-            ))}
-          </div>
-        </Card>
-        <Card>
-          <h3 className="text-lg font-semibold mb-3">Soft</h3>
-          <div className="flex flex-wrap gap-2">
-            {skills.soft.map((s) => (<Badge key={s}>{s}</Badge>))}
-          </div>
-        </Card>
-      </div>
-    </Section>
-  );
-}
-
-function Experience() {
-  return (
-    <Section id="experience" title="Experience">
-      <div className="grid gap-4">
-        {experience.map((job) => (
-          <Card key={job.role + job.org}>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-              <div>
-                <h3 className="text-lg font-semibold">{job.role}</h3>
-                <p className="text-sm opacity-80">{job.org} • {job.location}</p>
-              </div>
-              <p className="text-sm opacity-80">{job.date}</p>
             </div>
-            <ul className="list-disc ml-6 mt-3 space-y-1 text-sm leading-6">
+          ))}
+        </div>
+      </Window>
+      <Window title="SOFT.DAT" icon={<Icon name="chip" />}>
+        <div className="flex flex-wrap gap-2">
+          {skills.soft.map((s) => (
+            <span key={s} className="retro-tag dim">{s}</span>
+          ))}
+        </div>
+      </Window>
+    </div>
+  );
+}
+
+function ExperienceWindow() {
+  return (
+    <Window title="EXPERIENCE.LOG" icon={<Icon name="briefcase" />}>
+      <div className="space-y-4">
+        {experience.map((job) => (
+          <div key={job.role + job.org} className="retro-box">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+              <div>
+                <h3 className="text-xl font-bold">{job.role}</h3>
+                <p className="text-dim">{job.org} • {job.location}</p>
+              </div>
+              <p className="text-dim md:text-right shrink-0">{job.date}</p>
+            </div>
+            <hr className="retro-rule" />
+            <ul className="retro-list space-y-1 text-base">
               {job.bullets.map((b, i) => (<li key={i}>{b}</li>))}
             </ul>
-          </Card>
+          </div>
         ))}
       </div>
-    </Section>
+    </Window>
   );
 }
 
-function Projects() {
+function ProjectsWindow() {
   return (
-    <Section id="projects" title="Projects">
+    <Window title="PROJECTS.DIR" icon={<Icon name="folder" />}>
       <div className="grid md:grid-cols-3 gap-4">
         {projects.map((p) => (
-          <Card key={p.title}>
-            <h3 className="text-lg font-semibold">{p.title}</h3>
-            <p className="text-sm opacity-80 mt-1">{p.stack}</p>
-            <p className="mt-2 text-sm">{p.desc}</p>
+          <div key={p.title} className="retro-box flex flex-col">
+            <h3 className="text-lg font-bold leading-tight">{p.title}</h3>
+            <p className="text-dim text-sm mt-1">{p.stack}</p>
+            <hr className="retro-rule" />
+            <p className="text-base flex-1">{p.desc}</p>
             {p.link && (
-              <a href={p.link} target="_blank" rel="noreferrer" className="inline-block mt-3 text-sm underline">View on GitHub</a>
+              <a href={p.link} target="_blank" rel="noreferrer" className="retro-btn mt-3 w-fit text-sm">View on GitHub</a>
             )}
-          </Card>
+          </div>
         ))}
       </div>
-    </Section>
+    </Window>
   );
 }
 
-function Education() {
+function EducationWindow() {
   return (
-    <Section id="education" title="Education">
-      <div className="grid gap-4">
+    <Window title="EDUCATION.REC" icon={<Icon name="graduation" />}>
+      <div className="space-y-4">
         {education.map((e) => (
-          <Card key={e.title}>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-              <div>
-                <h3 className="text-lg font-semibold">{e.title}</h3>
-                <p className="text-sm opacity-80">{e.org} • {e.location}</p>
-              </div>
-              <p className="text-sm opacity-80">{e.date}</p>
+          <div key={e.title} className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 retro-box">
+            <div>
+              <h3 className="text-lg font-bold">{e.title}</h3>
+              <p className="text-dim">{e.org} • {e.location}</p>
             </div>
-          </Card>
+            <p className="text-dim md:text-right shrink-0">{e.date}</p>
+          </div>
         ))}
       </div>
-    </Section>
+    </Window>
   );
 }
 
-function Certifications() {
+function CertificationsWindow() {
   return (
-    <Section id="certs" title="Certifications">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <Window title="CERTIFICATIONS.DB" icon={<Icon name="award" />}>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
         {certs.map((c, idx) => (
-          <Card key={idx}>
-            <h4 className="font-semibold">{c.name}</h4>
-            <p className="text-sm opacity-80">{c.issuer}</p>
-            <p className="text-xs opacity-70 mt-1">Issued: {c.date}</p>
-          </Card>
+          <div key={idx} className="retro-box flex flex-col justify-between">
+            <div>
+              <h4 className="font-bold text-base leading-tight">{c.name}</h4>
+              <p className="text-dim text-sm mt-1">{c.issuer}</p>
+            </div>
+            <p className="text-xs text-dim mt-3">ISSUED: {c.date}</p>
+          </div>
         ))}
       </div>
-    </Section>
+    </Window>
   );
 }
 
-function Contact() {
+function ContactWindow() {
   return (
-    <Section id="contact" title="Contact">
+    <Window title="CONTACT.ADDR" icon={<Icon name="mail" />}>
       <div className="grid md:grid-cols-3 gap-4">
         {socialLinks.map((s) => (
-          <Card key={s.label}>
-            <p className="text-sm opacity-80 mb-2">{s.label}</p>
-            <a href={s.href} target="_blank" rel="noreferrer" className="underline break-all">{s.href}</a>
-          </Card>
+          <div key={s.label} className="retro-box">
+            <p className="text-sm text-dim mb-2 uppercase tracking-wider">[{s.label}]</p>
+            <a href={s.href} target="_blank" rel="noreferrer" className="break-all text-sm">{s.href}</a>
+          </div>
         ))}
       </div>
-      <p className="text-xs opacity-60 mt-6">Prefer WhatsApp? Add: +52 55 85 75 16 53</p>
-    </Section>
+      <p className="text-sm text-dim mt-6">Prefer WhatsApp? Add: +52 55 85 75 16 53</p>
+    </Window>
   );
 }
 
-function Footer() {
-  return <footer className="py-10 text-center text-sm opacity-70">© {new Date().getFullYear()} Natalia Pérez · Built with ♥</footer>;
+function StatusBar() {
+  return (
+    <footer className="border-t-2 border-crt-fg bg-crt-bg mt-8 py-2 text-sm">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>© {new Date().getFullYear()} Natalia Pérez · Built with ♥</p>
+        <div className="flex items-center gap-4 text-dim">
+          <span>640K RAM OK</span>
+          <span>CONN: 2400 BAUD</span>
+          <span>TERMINAL: VT-100</span>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default function App() {
+  const [time, setTime] = React.useState(new Date().toLocaleTimeString());
+
+  React.useEffect(() => {
+    const timer = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   React.useEffect(() => {
     const handler = (e) => {
       const a = e.target.closest('a[href^="#"]');
@@ -307,19 +401,21 @@ export default function App() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-white">
-      <Header />
-      <Hero />
-      <div className="max-w-6xl mx-auto px-4">
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Certifications />
-        <Contact />
+    <main className="min-h-screen bg-crt-bg text-crt-fg crt-turn-on">
+      <SystemMenu time={time} />
+      <Banner />
+      <MobileNav />
+      <div className="max-w-7xl mx-auto px-4 pb-8 space-y-6">
+        <ProfileWindow />
+        <div id="about"><AboutWindow /></div>
+        <div id="skills"><SkillsWindow /></div>
+        <div id="experience"><ExperienceWindow /></div>
+        <div id="projects"><ProjectsWindow /></div>
+        <div id="education"><EducationWindow /></div>
+        <div id="certs"><CertificationsWindow /></div>
+        <div id="contact"><ContactWindow /></div>
       </div>
-      <Footer />
+      <StatusBar />
     </main>
   );
 }

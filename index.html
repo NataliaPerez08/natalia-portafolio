@@ -1,12 +1,35 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Natalia Pérez · Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
-  <body class="min-h-screen">
+  <body class="min-h-screen crt">
+    <svg class="sr-only" width="0" height="0" aria-hidden="true" style="position:absolute;">
+      <defs>
+        <filter id="bitmap-dither" color-interpolation-filters="sRGB">
+          <feColorMatrix type="saturate" values="0" result="gray" />
+          <feComponentTransfer in="gray" result="contrast">
+            <feFuncR type="linear" slope="1.35" intercept="-0.17" />
+            <feFuncG type="linear" slope="1.35" intercept="-0.17" />
+            <feFuncB type="linear" slope="1.35" intercept="-0.17" />
+          </feComponentTransfer>
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch" result="noise" />
+          <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.4 0" in="noise" result="noiseAlpha" />
+          <feBlend mode="screen" in="noiseAlpha" in2="contrast" result="blend" />
+          <feComponentTransfer in="blend">
+            <feFuncR type="discrete" tableValues="0 1" />
+            <feFuncG type="discrete" tableValues="0 1" />
+            <feFuncB type="discrete" tableValues="0 1" />
+          </feComponentTransfer>
+        </filter>
+      </defs>
+    </svg>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
