@@ -70,7 +70,10 @@ function StatusBar() {
   return (
     <footer className="border-t-2 border-crt-fg bg-crt-bg mt-8 py-2 text-sm">
       <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p>© {new Date().getFullYear()} Natalia Pérez · Built with ♥</p>
+        <div>
+          <p>PERSONAL TERMINAL v1.1.0 — PROFILE VIEWER</p>
+          <p>© {new Date().getFullYear()} Natalia Pérez · Built with ♥</p>
+        </div>
         <div className="flex items-center gap-4 text-dim">
           <span>640K RAM OK</span>
           <span>CONN: 2400 BAUD</span>
