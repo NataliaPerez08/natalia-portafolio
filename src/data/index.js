@@ -1,4 +1,6 @@
 export { default as projects } from "./projects.js";
+export { default as experiments } from "./experiments.js";
+export { default as homelab } from "./homelab.js";
 export { default as contributions } from "./contributions.js";
 export { default as explorations } from "./explorations.js";
 export { default as archive } from "./archive.js";
