@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind utilities;
+
+:root {
+  --crt-bg: #050505;
+  --crt-fg: #e8e8e8;
+  --crt-dim: #707070;
+  --crt-grid: #0c0c0c;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'VT323', 'Courier New', Courier, monospace;
+  background-color: var(--crt-bg);
+  color: var(--crt-fg);
+  text-shadow: 0 0 1px rgba(232, 232, 232, 0.45), 0 0 5px rgba(232, 232, 232, 0.18);
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  background-image:
+    linear-gradient(rgba(20, 20, 20, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 20, 20, 0.3) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Selection like classic inverse video */
+::selection {
+  background: var(--crt-fg);
+  color: var(--crt-bg);
+}
+
+/* Custom chunky scrollbar */
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: var(--crt-bg);
+  border-left: 2px solid var(--crt-fg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--crt-fg);
+  border: 3px solid var(--crt-bg);
+}
+
+/* Links */
+a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  background: var(--crt-fg);
+  color: var(--crt-bg);
+  text-decoration: none;
+  outline: none;
+}
+
+/* Lists */
+.retro-list {
+  list-style: square;
+  padding-left: 1.25rem;
+}
+
+.retro-list li::marker {
+  color: var(--crt-fg);
+}
+
+/* Utility text colors */
+.text-dim {
+  color: var(--crt-dim);
+}
+
+.border-dim {
+  border-color: var(--crt-dim);
+}

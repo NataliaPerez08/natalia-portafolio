@@ -11,6 +11,31 @@ function ScrollToTop() {
   return null;
 }
 
+const TITLES = {
+  "/": "Natalia Pérez · Home",
+  "/about": "Natalia Pérez · About",
+  "/projects": "Natalia Pérez · Projects",
+  "/homelab": "Natalia Pérez · Homelab",
+  "/experiments": "Natalia Pérez · Experiments",
+  "/open-source": "Natalia Pérez · Open Source",
+  "/archive": "Natalia Pérez · Academic Archive",
+  "/experience": "Natalia Pérez · Experience",
+  "/contact": "Natalia Pérez · Contact",
+};
+
+function PageTitle() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    const title = TITLES[pathname] || "Natalia Pérez";
+    if (pathname.startsWith("/projects/")) {
+      document.title = "Natalia Pérez · Case Study";
+    } else {
+      document.title = title;
+    }
+  }, [pathname]);
+  return null;
+}
+
 function Clock() {
   const [time, setTime] = React.useState(new Date().toLocaleTimeString());
   React.useEffect(() => {
@@ -70,7 +95,10 @@ function StatusBar() {
   return (
     <footer className="border-t-2 border-crt-fg bg-crt-bg mt-8 py-2 text-sm">
       <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p>© {new Date().getFullYear()} Natalia Pérez · Built with ♥</p>
+        <div>
+          <p>PERSONAL TERMINAL v1.1.0 — PROFILE VIEWER</p>
+          <p>© {new Date().getFullYear()} Natalia Pérez · Built with ♥</p>
+        </div>
         <div className="flex items-center gap-4 text-dim">
           <span>640K RAM OK</span>
           <span>CONN: 2400 BAUD</span>
@@ -85,12 +113,13 @@ export default function TerminalLayout() {
   return (
     <div className="min-h-screen bg-crt-bg text-crt-fg crt-turn-on">
       <ScrollToTop />
+      <PageTitle />
       <SystemMenu />
-      <Banner />
       <MobileNav />
       <main className="max-w-7xl mx-auto px-4 pb-8 space-y-6">
         <Outlet />
       </main>
+      <Banner />
       <StatusBar />
     </div>
   );
