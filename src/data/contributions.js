@@ -1,0 +1,66 @@
+const contributions = [
+  {
+    project: "ncclient",
+    type: "contribution",
+    upstream: "ncclient/ncclient",
+    pullRequest: 667,
+    pullRequestUrl: "https://github.com/ncclient/ncclient/pull/667",
+    category: ["networking", "open-source"],
+    summary:
+      "Fix RaiseMode.ERRORS handling for replies containing multiple RPC errors with mixed severities. Includes regression tests.",
+    stack: ["Python", "NETCONF"],
+  },
+  {
+    project: "netutils",
+    type: "contribution",
+    upstream: "networktocode/netutils",
+    pullRequest: 890,
+    pullRequestUrl: "https://github.com/networktocode/netutils/pull/890",
+    category: ["networking", "open-source"],
+    summary:
+      "Fix NIST platform builder behavior for unparseable versions. Adds regression coverage.",
+    stack: ["Python", "Network Automation"],
+  },
+  {
+    project: "Wick Stack",
+    type: "contribution",
+    upstream: "Finnlytics/wick-stack",
+    pullRequest: 36,
+    pullRequestUrl: "https://github.com/Finnlytics/wick-stack/pull/36",
+    category: ["networking", "open-source"],
+    summary: "Signed-zero JSON decoding test coverage.",
+    stack: ["Rust", "CoAP"],
+  },
+  {
+    project: "Wick Stack",
+    type: "contribution",
+    upstream: "Finnlytics/wick-stack",
+    pullRequest: 37,
+    pullRequestUrl: "https://github.com/Finnlytics/wick-stack/pull/37",
+    category: ["networking", "open-source"],
+    summary: "Registration server request-struct refactor.",
+    stack: ["Rust", "CoAP"],
+  },
+  {
+    project: "yasbd-lib",
+    type: "contribution",
+    upstream: "speedyk-005/yasbd-lib",
+    pullRequest: 261,
+    pullRequestUrl: "https://github.com/speedyk-005/yasbd-lib/pull/261",
+    category: ["python", "open-source"],
+    summary: "Fix duplicate boundary offsets and add tests.",
+    stack: ["Python"],
+  },
+  {
+    project: "VibeSolve",
+    type: "contribution",
+    upstream: "vibesolve/vibesolve",
+    pullRequest: 17,
+    pullRequestUrl: "https://github.com/vibesolve/vibesolve/pull/17",
+    category: ["ai", "open-source"],
+    summary: "Adds CI with pytest across supported Python versions.",
+    stack: ["Python", "CI/CD"],
+  },
+];
+
+export default contributions;
