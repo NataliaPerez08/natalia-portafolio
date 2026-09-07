@@ -89,11 +89,11 @@ export default function TerminalLayout() {
     <div className="min-h-screen bg-crt-bg text-crt-fg crt-turn-on">
       <ScrollToTop />
       <SystemMenu />
-      <Banner />
       <MobileNav />
       <main className="max-w-7xl mx-auto px-4 pb-8 space-y-6">
         <Outlet />
       </main>
+      <Banner />
       <StatusBar />
     </div>
   );
