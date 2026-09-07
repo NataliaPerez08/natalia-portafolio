@@ -11,6 +11,31 @@ function ScrollToTop() {
   return null;
 }
 
+const TITLES = {
+  "/": "Natalia Pérez · Home",
+  "/about": "Natalia Pérez · About",
+  "/projects": "Natalia Pérez · Projects",
+  "/homelab": "Natalia Pérez · Homelab",
+  "/experiments": "Natalia Pérez · Experiments",
+  "/open-source": "Natalia Pérez · Open Source",
+  "/archive": "Natalia Pérez · Academic Archive",
+  "/experience": "Natalia Pérez · Experience",
+  "/contact": "Natalia Pérez · Contact",
+};
+
+function PageTitle() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    const title = TITLES[pathname] || "Natalia Pérez";
+    if (pathname.startsWith("/projects/")) {
+      document.title = "Natalia Pérez · Case Study";
+    } else {
+      document.title = title;
+    }
+  }, [pathname]);
+  return null;
+}
+
 function Clock() {
   const [time, setTime] = React.useState(new Date().toLocaleTimeString());
   React.useEffect(() => {
@@ -88,6 +113,7 @@ export default function TerminalLayout() {
   return (
     <div className="min-h-screen bg-crt-bg text-crt-fg crt-turn-on">
       <ScrollToTop />
+      <PageTitle />
       <SystemMenu />
       <MobileNav />
       <main className="max-w-7xl mx-auto px-4 pb-8 space-y-6">

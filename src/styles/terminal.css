@@ -1,0 +1,95 @@
+@tailwind components;
+
+/* Retro terminal chrome */
+.retro-window {
+  border: 2px solid var(--crt-fg);
+  background: var(--crt-bg);
+  box-shadow: 6px 6px 0 rgba(232, 232, 232, 0.08);
+}
+
+.retro-title-bar {
+  border-bottom: 2px solid var(--crt-fg);
+  background: var(--crt-fg);
+  color: var(--crt-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0.55rem;
+  text-shadow: none;
+}
+
+.retro-title-bar.inverse {
+  background: var(--crt-bg);
+  color: var(--crt-fg);
+}
+
+.retro-title-bar.plain {
+  background: transparent;
+  color: var(--crt-fg);
+}
+
+.retro-box {
+  border: 2px solid var(--crt-fg);
+  padding: 0.65rem;
+}
+
+.retro-btn {
+  border: 2px solid var(--crt-fg);
+  padding: 0.25rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  text-shadow: inherit;
+  cursor: pointer;
+}
+
+.retro-btn:hover,
+.retro-btn:focus {
+  background: var(--crt-fg);
+  color: var(--crt-bg);
+  text-shadow: none;
+  outline: none;
+}
+
+.retro-tag {
+  border: 2px solid var(--crt-fg);
+  padding: 0.1rem 0.5rem;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.retro-tag.dim {
+  border-color: var(--crt-dim);
+  color: var(--crt-dim);
+}
+
+.bitmap-portrait {
+  filter: url(#bitmap-dither) grayscale(1) contrast(1.05);
+  image-rendering: pixelated;
+}
+
+/* ASCII/retro separators */
+.retro-rule {
+  border: none;
+  border-top: 2px dashed var(--crt-dim);
+  margin: 0.75rem 0;
+}
+
+.retro-rule-solid {
+  border: none;
+  border-top: 2px solid var(--crt-fg);
+  margin: 0.75rem 0;
+}
+
+/* Status blinker */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: "█";
+  animation: blink 1s step-end infinite;
+}
