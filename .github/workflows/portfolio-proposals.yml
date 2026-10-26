@@ -1,0 +1,57 @@
+name: Portfolio proposals
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+concurrency:
+  group: portfolio-proposals
+  cancel-in-progress: false
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: node --test tests/*.test.mjs
+      - name: Synchronize GitHub metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-github.mjs
+      - run: npm run build
+      - name: Create review PR
+        id: proposal
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/data/generated/github-projects.json; then echo 'No changes'; exit 0; fi
+          BRANCH="portfolio/sync-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$BRANCH"
+          git add src/data/generated/github-projects.json
+          git commit -m 'chore: propose GitHub portfolio sync'
+          git push origin "$BRANCH"
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title 'chore: review GitHub portfolio metadata' --body 'Telegram approval required. No editorial fields are overwritten.')
+          echo "number=${PR_URL##*/}" >> "$GITHUB_OUTPUT"
+          gh workflow run portfolio-checks.yml --ref "$BRANCH"
+      - name: Register proposal and notify Telegram
+        if: steps.proposal.outputs.number != ''
+        env:
+          WORKER_URL: ${{ vars.PORTFOLIO_APPROVAL_WORKER_URL }}
+          PROPOSAL_API_SECRET: ${{ secrets.PROPOSAL_API_SECRET }}
+          PR_NUMBER: ${{ steps.proposal.outputs.number }}
+        run: |
+          curl --fail-with-body -sS -X POST "${WORKER_URL%/}/register" \
+            -H "Authorization: Bearer $PROPOSAL_API_SECRET" \
+            -H 'Content-Type: application/json' \
+            --data "{\"pr_number\":$PR_NUMBER}"

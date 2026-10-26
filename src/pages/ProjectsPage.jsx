@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TerminalWindow from "../components/TerminalWindow.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
@@ -13,8 +14,15 @@ const CATEGORIES = [
 ];
 
 export default function ProjectsPage() {
+  const [sort, setSort] = useState("relevance");
   const featured = projects.filter((p) => p.featured);
   const standard = projects.filter((p) => !p.featured);
+  const sorted =
+    sort === "activity"
+      ? [...standard].sort((a, b) =>
+          (b.updatedAt || "").localeCompare(a.updatedAt || "")
+        )
+      : standard;
 
   return (
     <div className="space-y-6">
@@ -47,8 +55,22 @@ export default function ProjectsPage() {
       </TerminalWindow>
 
       <TerminalWindow title="PROJECTS.DIR" icon="folder">
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button
+            className={`retro-btn text-sm ${sort === "relevance" ? "bg-crt-fg text-crt-bg" : "text-crt-dim border-crt-dim"}`}
+            onClick={() => setSort("relevance")}
+          >
+            Relevance
+          </button>
+          <button
+            className={`retro-btn text-sm ${sort === "activity" ? "bg-crt-fg text-crt-bg" : "text-crt-dim border-crt-dim"}`}
+            onClick={() => setSort("activity")}
+          >
+            Activity
+          </button>
+        </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {standard.map((p) => (
+          {sorted.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}
         </div>

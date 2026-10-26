@@ -28,6 +28,20 @@ export default function ProjectDetailPage() {
             ))}
           </div>
         </div>
+        {(project.language || project.stars != null || project.updatedAt) && (
+          <div className="mt-4">
+            <p className="text-dim text-sm uppercase tracking-wider mb-2">ACTIVITY</p>
+            <p className="text-dim text-sm">
+              {[
+                project.language,
+                project.stars != null ? `${project.stars} ★` : null,
+                project.updatedAt ? `updated ${project.updatedAt.slice(0, 10)}` : null,
+              ]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          </div>
+        )}
         {project.repository && (
           <a
             href={project.repository}
