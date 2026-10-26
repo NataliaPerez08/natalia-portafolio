@@ -1,0 +1,1 @@
+{"name":"natalia-telegram-approvals","private":true,"type":"module","scripts":{"deploy":"wrangler deploy","migrate":"wrangler d1 migrations apply portfolio-approvals --remote","dev":"wrangler dev"},"devDependencies":{"wrangler":"^4.0.0"}}

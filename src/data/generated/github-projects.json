@@ -1,0 +1,575 @@
+[
+  {
+    "id": 701579644,
+    "slug": "app-tuxers",
+    "name": "app-tuxers",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/app-tuxers",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2023-10-08T00:20:43Z",
+    "archived": false
+  },
+  {
+    "id": 1391497020,
+    "slug": "appfinanzasprototype",
+    "name": "AppFinanzasPrototype",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/AppFinanzasPrototype",
+    "summary": "",
+    "language": "Kotlin",
+    "stack": [
+      "Kotlin"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-10-10T13:34:31Z",
+    "archived": false
+  },
+  {
+    "id": 290939120,
+    "slug": "aprendiendoc-",
+    "name": "AprendiendoC-",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/AprendiendoC-",
+    "summary": "",
+    "language": "C",
+    "stack": [
+      "C"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2025-09-12T05:23:21Z",
+    "archived": false
+  },
+  {
+    "id": 1348940717,
+    "slug": "careeragent",
+    "name": "CareerAgent",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/CareerAgent",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-09-14T04:04:51Z",
+    "archived": false
+  },
+  {
+    "id": 1332513108,
+    "slug": "ctx-bridge",
+    "name": "ctx-bridge",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/ctx-bridge",
+    "summary": "Local-First AI Context Bridge — capture git/files/shell state into one portable snapshot and paste into any AI assistant. Zero config, fully local.",
+    "language": null,
+    "stack": [],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-08-13T19:44:42Z",
+    "archived": false
+  },
+  {
+    "id": 868555237,
+    "slug": "curriculum-vitae",
+    "name": "curriculum-vitae",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/curriculum-vitae",
+    "summary": "",
+    "language": "TeX",
+    "stack": [
+      "TeX"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2025-06-28T04:42:04Z",
+    "archived": false
+  },
+  {
+    "id": 1333645531,
+    "slug": "data-analyst-agent",
+    "name": "Data-Analyst-Agent",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Data-Analyst-Agent",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-08-27T17:20:30Z",
+    "archived": false
+  },
+  {
+    "id": 868563339,
+    "slug": "docker-examples",
+    "name": "docker-examples",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/docker-examples",
+    "summary": "",
+    "language": null,
+    "stack": [],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2025-05-13T16:35:06Z",
+    "archived": false
+  },
+  {
+    "id": 773567454,
+    "slug": "docstesis",
+    "name": "docsTesis",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/docsTesis",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-12-22T02:48:10Z",
+    "archived": false
+  },
+  {
+    "id": 422379563,
+    "slug": "ejercicios-laboratorio",
+    "name": "Ejercicios-Laboratorio",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Ejercicios-Laboratorio",
+    "summary": "",
+    "language": "Java",
+    "stack": [
+      "Java"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2021-11-18T23:32:19Z",
+    "archived": false
+  },
+  {
+    "id": 1270674796,
+    "slug": "iptables-visualizer",
+    "name": "iptables-visualizer",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/iptables-visualizer",
+    "summary": "",
+    "language": "Go",
+    "stack": [
+      "Go"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-08-12T19:49:13Z",
+    "archived": false
+  },
+  {
+    "id": 906830817,
+    "slug": "linkguard",
+    "name": "linkguard",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/linkguard",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2025-02-04T03:11:58Z",
+    "archived": false
+  },
+  {
+    "id": 1192273843,
+    "slug": "linkguard-v4",
+    "name": "LinkGuard-v4",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/LinkGuard-v4",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-06-29T20:11:13Z",
+    "archived": false
+  },
+  {
+    "id": 1349924322,
+    "slug": "mini-agent",
+    "name": "mini-agent",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/mini-agent",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-10-26T02:25:15Z",
+    "archived": false
+  },
+  {
+    "id": 1430393111,
+    "slug": "modelarts-images",
+    "name": "modelarts-images",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/modelarts-images",
+    "summary": "",
+    "language": "Dockerfile",
+    "stack": [
+      "Dockerfile"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-10-23T17:10:17Z",
+    "archived": false
+  },
+  {
+    "id": 1044643278,
+    "slug": "natalia-portafolio",
+    "name": "natalia-portafolio",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/natalia-portafolio",
+    "summary": "Portafolio en Reac",
+    "language": "JavaScript",
+    "stack": [
+      "JavaScript"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-09-07T18:25:16Z",
+    "archived": false
+  },
+  {
+    "id": 348116838,
+    "slug": "nataliaperez08",
+    "name": "NataliaPerez08",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/NataliaPerez08",
+    "summary": "Config files for my GitHub profile.",
+    "language": "JavaScript",
+    "stack": [
+      "JavaScript"
+    ],
+    "topics": [
+      "config",
+      "github-config"
+    ],
+    "stars": 0,
+    "updatedAt": "2025-09-09T14:50:34Z",
+    "archived": false
+  },
+  {
+    "id": 1341046042,
+    "slug": "obs",
+    "name": "OBS",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/OBS",
+    "summary": "",
+    "language": "PowerShell",
+    "stack": [
+      "PowerShell"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-08-20T18:48:40Z",
+    "archived": false
+  },
+  {
+    "id": 1348931461,
+    "slug": "orbyn",
+    "name": "orbyn",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/orbyn",
+    "summary": "",
+    "language": "Rust",
+    "stack": [
+      "Rust"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-10-22T17:12:16Z",
+    "archived": false
+  },
+  {
+    "id": 1097977979,
+    "slug": "osi-model",
+    "name": "OSI-Model",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/OSI-Model",
+    "summary": "",
+    "language": "JavaScript",
+    "stack": [
+      "JavaScript"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2025-11-30T03:55:55Z",
+    "archived": false
+  },
+  {
+    "id": 795779196,
+    "slug": "practica-9",
+    "name": "practica-9",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/practica-9",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-05-17T20:30:47Z",
+    "archived": false
+  },
+  {
+    "id": 757251308,
+    "slug": "practicas-concurrente-equipo",
+    "name": "Practicas-Concurrente-Equipo",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Practicas-Concurrente-Equipo",
+    "summary": "",
+    "language": "Java",
+    "stack": [
+      "Java"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-05-02T04:53:09Z",
+    "archived": false
+  },
+  {
+    "id": 433470052,
+    "slug": "proyecto_estenografia",
+    "name": "Proyecto_Estenografia",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Proyecto_Estenografia",
+    "summary": "",
+    "language": "Java",
+    "stack": [
+      "Java"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2021-12-18T02:15:30Z",
+    "archived": false
+  },
+  {
+    "id": 792885184,
+    "slug": "proyecto-genomica-computacional",
+    "name": "Proyecto-Genomica-Computacional",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Proyecto-Genomica-Computacional",
+    "summary": "Proyecto para el curso de genomica computacional",
+    "language": "Jupyter Notebook",
+    "stack": [
+      "Jupyter Notebook"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-06-14T04:47:41Z",
+    "archived": false
+  },
+  {
+    "id": 798527339,
+    "slug": "proyecto-redes-neuronales",
+    "name": "Proyecto-Redes-Neuronales",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Proyecto-Redes-Neuronales",
+    "summary": "",
+    "language": "Jupyter Notebook",
+    "stack": [
+      "Jupyter Notebook"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-06-02T03:32:07Z",
+    "archived": false
+  },
+  {
+    "id": 448055994,
+    "slug": "proyecto-ssss",
+    "name": "proyecto-SSSS",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/proyecto-SSSS",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2022-01-26T15:18:04Z",
+    "archived": false
+  },
+  {
+    "id": 455758788,
+    "slug": "proyectoete",
+    "name": "proyectoETE",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/proyectoETE",
+    "summary": "",
+    "language": "PHP",
+    "stack": [
+      "PHP"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2022-03-26T01:48:17Z",
+    "archived": false
+  },
+  {
+    "id": 778631191,
+    "slug": "proyectointermedio",
+    "name": "proyectoIntermedio",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/proyectoIntermedio",
+    "summary": "",
+    "language": "HTML",
+    "stack": [
+      "HTML"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-04-22T03:24:31Z",
+    "archived": false
+  },
+  {
+    "id": 1368775907,
+    "slug": "pushlane",
+    "name": "Pushlane",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Pushlane",
+    "summary": "",
+    "language": "Jinja",
+    "stack": [
+      "Jinja"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-09-16T00:31:08Z",
+    "archived": false
+  },
+  {
+    "id": 1270281700,
+    "slug": "qemu-visualizer",
+    "name": "qemu-visualizer",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/qemu-visualizer",
+    "summary": "",
+    "language": "JavaScript",
+    "stack": [
+      "JavaScript"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-06-16T00:22:07Z",
+    "archived": false
+  },
+  {
+    "id": 1360532728,
+    "slug": "reliability-lab",
+    "name": "Reliability-Lab",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Reliability-Lab",
+    "summary": "Proxmox-first lab for practicing SRE, observability, incident response and chaos engineering with OpenTofu and Ansible.",
+    "language": null,
+    "stack": [],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-09-07T18:09:12Z",
+    "archived": false
+  },
+  {
+    "id": 700643644,
+    "slug": "servicio-social",
+    "name": "servicio-social",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/servicio-social",
+    "summary": "",
+    "language": "HTML",
+    "stack": [
+      "HTML"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-03-14T17:48:42Z",
+    "archived": false
+  },
+  {
+    "id": 263985696,
+    "slug": "sw2020_nataliaperezromero",
+    "name": "SW2020_NataliaPerezRomero",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/SW2020_NataliaPerezRomero",
+    "summary": "Perez Romero Natalia Abigail. Me encanta el Curso Web 2020 :D, ¡Hola GitHub!",
+    "language": "PHP",
+    "stack": [
+      "PHP"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2020-06-07T23:27:41Z",
+    "archived": true
+  },
+  {
+    "id": 705481426,
+    "slug": "tareaedda",
+    "name": "tareaEDDA",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/tareaEDDA",
+    "summary": "",
+    "language": "TeX",
+    "stack": [
+      "TeX"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2023-10-20T08:38:31Z",
+    "archived": false
+  },
+  {
+    "id": 762881807,
+    "slug": "tareas-genomica-computacional",
+    "name": "tareas-genomica-computacional",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/tareas-genomica-computacional",
+    "summary": "",
+    "language": "Jupyter Notebook",
+    "stack": [
+      "Jupyter Notebook"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2024-03-06T19:34:36Z",
+    "archived": false
+  },
+  {
+    "id": 900540420,
+    "slug": "tesis",
+    "name": "tesis",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/tesis",
+    "summary": "",
+    "language": "TeX",
+    "stack": [
+      "TeX"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2025-05-21T12:40:27Z",
+    "archived": false
+  }
+]

@@ -1,0 +1,22 @@
+
+{
+  "name": "natalia-portfolio-approvals",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-18",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "portfolio-approvals",
+      "database_id": "124c240b-6280-4d90-ad1b-5ccccff40a99",
+      "remote": true
+    }
+  ],
+  "vars": {
+    "GITHUB_OWNER": "NataliaPerez08",
+    "GITHUB_REPO": "natalia-portafolio"
+  },
+  "triggers": {
+    "crons": ["0 0 * * *"]
+  }
+}
+
