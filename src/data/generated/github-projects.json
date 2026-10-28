@@ -156,6 +156,22 @@
     "archived": false
   },
   {
+    "id": 1436094292,
+    "slug": "huawei-cloud-image-optimization",
+    "name": "Huawei-Cloud-Image-Optimization",
+    "type": "project",
+    "repository": "https://github.com/NataliaPerez08/Huawei-Cloud-Image-Optimization",
+    "summary": "",
+    "language": "Python",
+    "stack": [
+      "Python"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updatedAt": "2026-10-27T18:29:51Z",
+    "archived": false
+  },
+  {
     "id": 1270674796,
     "slug": "iptables-visualizer",
     "name": "iptables-visualizer",
@@ -216,7 +232,7 @@
     ],
     "topics": [],
     "stars": 0,
-    "updatedAt": "2026-10-26T03:48:08Z",
+    "updatedAt": "2026-10-26T17:48:02Z",
     "archived": false
   },
   {
@@ -232,7 +248,7 @@
     ],
     "topics": [],
     "stars": 0,
-    "updatedAt": "2026-10-23T17:10:17Z",
+    "updatedAt": "2026-10-27T17:42:20Z",
     "archived": false
   },
   {
@@ -248,7 +264,7 @@
     ],
     "topics": [],
     "stars": 0,
-    "updatedAt": "2026-10-26T04:22:27Z",
+    "updatedAt": "2026-10-27T15:23:24Z",
     "archived": false
   },
   {
@@ -299,7 +315,7 @@
     ],
     "topics": [],
     "stars": 0,
-    "updatedAt": "2026-10-22T17:12:16Z",
+    "updatedAt": "2026-10-27T22:15:48Z",
     "archived": false
   },
   {
