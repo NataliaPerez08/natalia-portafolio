@@ -220,22 +220,6 @@
     "archived": false
   },
   {
-    "id": 1349924322,
-    "slug": "mini-agent",
-    "name": "mini-agent",
-    "type": "project",
-    "repository": "https://github.com/NataliaPerez08/mini-agent",
-    "summary": "",
-    "language": "Python",
-    "stack": [
-      "Python"
-    ],
-    "topics": [],
-    "stars": 0,
-    "updatedAt": "2026-10-26T17:48:02Z",
-    "archived": false
-  },
-  {
     "id": 1430393111,
     "slug": "modelarts-images",
     "name": "modelarts-images",
@@ -264,7 +248,7 @@
     ],
     "topics": [],
     "stars": 0,
-    "updatedAt": "2026-10-27T15:23:24Z",
+    "updatedAt": "2026-11-08T16:00:19Z",
     "archived": false
   },
   {
@@ -315,7 +299,7 @@
     ],
     "topics": [],
     "stars": 0,
-    "updatedAt": "2026-10-27T22:15:48Z",
+    "updatedAt": "2026-11-02T19:19:02Z",
     "archived": false
   },
   {
